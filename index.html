@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriv Trading Bot</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Deriv Trading Bot</h1>
+
+        <div class="auth-section">
+            <h2>API Authentication</h2>
+            <input type="text" id="apiToken" placeholder="Enter your API token">
+            <button id="connectBtn">Connect</button>
+        </div>
+
+        <div class="bot-controls">
+            <h2>Bot Configuration</h2>
+            <div class="form-group">
+                <label for="symbol">Symbol:</label>
+                <select id="symbol">
+                    <option value="R_100">Volatility 100 Index</option>
+                    <option value="R_50">Volatility 50 Index</option>
+                    <option value="R_25">Volatility 25 Index</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tradeType">Trade Type:</label>
+                <select id="tradeType">
+                    <option value="CALL">Call</option>
+                    <option value="PUT">Put</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" value="10">
+            </div>
+
+            <div class="form-group">
+                <label for="strategy">Strategy:</label>
+                <select id="strategy">
+                    <option value="martingale">Martingale</option>
+                    <option value="reverse">Reverse Martingale</option>
+                    <option value="random">Random</option>
+                </select>
+            </div>
+
+            <button id="startBotBtn">Start Bot</button>
+            <button id="stopBotBtn" disabled>Stop Bot</button>
+        </div>
+        
+        <div class="trades-log">
+            <h2>Trades Log</h2>
+            <div id="logContainer"></div>
+        </div>
+    </div>
+
+    <script src="bot.js"></script>
+</body>
+</html>
